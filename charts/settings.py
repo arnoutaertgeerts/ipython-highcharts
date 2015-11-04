@@ -21,5 +21,5 @@ def load_options(path):
         with open(path, 'r') as json_file:
             return json.loads(json_file.read())
     except IOError:
-        print 'No options file found. Did you spell the name correctly?'
+        print('No options file found. Did you spell the name correctly?')
         return dict()

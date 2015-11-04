@@ -1,10 +1,10 @@
 __author__ = 'Arnout Aertgeerts'
 
-from core import MyTemplate, to_json_files, to_series, clean_dir, set_display, show_plot, make_dir, remove_quotes
-from jsonencoder import ChartsJSONEncoder
-from chart import Chart
-from server import address
-from settings import default_settings, load_options, default_options
+from .core import MyTemplate, to_json_files, to_series, clean_dir, set_display, show_plot, make_dir, remove_quotes
+from .jsonencoder import ChartsJSONEncoder
+from .chart import Chart
+from .server import address
+from .settings import default_settings, load_options, default_options
 
 import os
 import json

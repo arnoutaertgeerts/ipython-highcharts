@@ -24,8 +24,8 @@ def df_to_series(df, display=[]):
                 display[col]
                 display[col]=True
             except KeyError:
-                print 'Warning\n','-'*7,'\n',' '*4,'"{}"'.format(col), 'will not be displayed.\nVariable not found in DataFrame.\n'
-                print 'Try one the following columns:\n{}'.format(list(df.columns))
+                print('Warning\n','-'*7,'\n',' '*4,'"{}"'.format(col), 'will not be displayed.\nVariable not found in DataFrame.\n')
+                print('Try one the following columns:\n{}'.format(list(df.columns)))
     except TypeError:
         display = dict(zip(df.columns,[plot_columns for x in df]))
     for col in df:
