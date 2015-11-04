@@ -1,7 +1,12 @@
 __author__ = 'Arnout Aertgeerts'
 
-import SimpleHTTPServer
-import SocketServer
+import sys
+if sys.version_info.major == 3:
+    import http.server as SimpleHTTPServer
+    import socketserver as SocketServer
+else:
+    import SimpleHTTPServer
+    import SocketServer
 import os
 import json
 
@@ -42,7 +47,7 @@ def run_server():
     server = ChartServer(address, ChartRequestHandler)
     ip, port = server.server_address  # find out what port we were given
 
-    print 'Server running in the folder {0} at {1}:{2}'.format(os.path.abspath(os.getcwd()), ip, port)
+    print('Server running in the folder {0} at {1}:{2}'.format(os.path.abspath(os.getcwd()), ip, port))
 
     t = threading.Thread(target=server.serve_forever)
     t.setDaemon(True)  # don't hang on exit

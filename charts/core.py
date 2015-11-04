@@ -1,8 +1,8 @@
 __author__ = 'arnoutaertgeerts'
 
 from string import Template
-from jsonencoder import ChartsJSONEncoder
-from server import url
+from .jsonencoder import ChartsJSONEncoder
+from .server import url
 
 import os
 import json
@@ -22,7 +22,7 @@ def show_plot(html, saveHTML, show, async=False):
         return HTML(html)
 
     elif show == 'tab':
-        print 'Opening new tab...'
+        print('Opening new tab...')
         if async:
             address = url(async)
             webbrowser.open_new_tab(address)
@@ -30,7 +30,7 @@ def show_plot(html, saveHTML, show, async=False):
             webbrowser.open_new_tab('file://' + os.path.realpath(saveHTML))
 
     elif show == 'window':
-        print 'Trying to open a window. If this fails we will open a tab...'
+        print('Trying to open a window. If this fails we will open a tab...')
         if async:
             address = url(async)
             webbrowser.open_new(address)
